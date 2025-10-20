@@ -62,6 +62,14 @@ Whether you're building the next open-world RPG, crafting emotionally resonant n
   - Rule-based reasoning systems
   - Symbolic knowledge graphs
 
+- **GOAP Planning** (544 lines): Goal-Oriented Action Planning for autonomous behavior
+  - A* pathfinding for optimal action sequences
+  - Dynamic precondition and effect system
+  - Priority-based goal selection
+  - Cost-optimized planning with backtracking
+  - Real-time replanning support
+  - Integration with all AI systems
+
 ### 🏗️ Core Frameworks
 
 - **VIVIAN** (Vector Index Virtual Infrastructure): High-performance vector operations
@@ -244,12 +252,14 @@ ARCADIA includes comprehensive examples:
 - **`basic_game`** - Simple game setup with vector index and caching
 - **`ai_npc`** - Emotionally intelligent NPC with adaptive behavior
 - **`npc_ai_example`** - Advanced NPC decision-making system
+- **`goap_npc_behavior`** - Goal-oriented action planning for autonomous NPCs
 
 Run examples with:
 
 ```bash
 cargo run --example basic_game
 cargo run --example ai_npc
+cargo run --example goap_npc_behavior
 ```
 
 ## Performance
