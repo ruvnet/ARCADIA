@@ -4,9 +4,14 @@
 [![Documentation](https://docs.rs/arcadia/badge.svg)](https://docs.rs/arcadia)
 [![License](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue.svg)](LICENSE-MIT)
 [![Rust](https://img.shields.io/badge/rust-1.75%2B-orange.svg)](https://www.rust-lang.org/)
-[![CI](https://github.com/ruvnet/arcadia/workflows/CI/badge.svg)](https://github.com/ruvnet/arcadia/actions)
+[![CI](https://github.com/ruvnet/ARCADIA/workflows/CI/badge.svg)](https://github.com/ruvnet/ARCADIA/actions)
+[![Downloads](https://img.shields.io/crates/d/arcadia.svg)](https://crates.io/crates/arcadia)
+[![GitHub Stars](https://img.shields.io/github/stars/ruvnet/ARCADIA.svg?style=social&label=Star)](https://github.com/ruvnet/ARCADIA)
+[![Website](https://img.shields.io/badge/website-ruv.io-blue)](https://ruv.io/arcadia)
 
 **Advanced and Responsive Computational Architecture for Dynamic Interactive AI**
+
+> 🎮 An enterprise-grade AI game engine by [rUv](https://ruv.io) | [Documentation](https://docs.rs/arcadia) | [GitHub](https://github.com/ruvnet/ARCADIA)
 
 ARCADIA is a high-performance, AI-driven game engine designed for creating dynamic, adaptive, and emotionally responsive gaming experiences. Built on the innovative VIVIAN and PARIS frameworks, ARCADIA enables developers to create game worlds that evolve, learn, and adapt to player behavior in real-time.
 
