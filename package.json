@@ -1,0 +1,41 @@
+{
+  "name": "arcadia-agentdb",
+  "version": "0.1.0",
+  "description": "ARCADIA AgentDB WASM bindings for browser and Node.js",
+  "main": "pkg/arcadia.js",
+  "types": "pkg/arcadia.d.ts",
+  "files": [
+    "pkg/**/*"
+  ],
+  "scripts": {
+    "build": "wasm-pack build --target web --out-dir pkg",
+    "build:node": "wasm-pack build --target nodejs --out-dir pkg-node",
+    "build:bundler": "wasm-pack build --target bundler --out-dir pkg-bundler",
+    "build:all": "npm run build && npm run build:node && npm run build:bundler",
+    "test": "wasm-pack test --headless --firefox",
+    "serve": "python3 -m http.server 8080",
+    "dev": "npm run build && npm run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruvnet/arcadia"
+  },
+  "keywords": [
+    "wasm",
+    "agentdb",
+    "ai",
+    "machine-learning",
+    "reinforcement-learning",
+    "experience-replay",
+    "vector-database"
+  ],
+  "author": "Reuven Cohen <ruv@ruvnet.com>",
+  "license": "MIT OR Apache-2.0",
+  "devDependencies": {
+    "wasm-pack": "^0.12.1"
+  },
+  "dependencies": {
+    "console-error-panic-hook": "^0.1.7",
+    "serde-wasm-bindgen": "^0.6.0"
+  }
+}

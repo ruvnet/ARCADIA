@@ -1,0 +1,99 @@
+# ARCADIA Configuration File Example
+# Copy this to config.toml and customize for your environment
+
+[metadata]
+name = "ARCADIA Game Instance"
+version = "0.1.0"
+description = "Advanced and Responsive Computational Architecture for Dynamic Interactive AI"
+author = "@rUv"
+
+[vector_index]
+url = "https://api.openai.com"
+api_key = "your-openai-api-key-here"
+qdrant_url = "http://localhost:6334"
+collection_name = "arcadia_vectors"
+embedding_model = "text-embedding-3-small"
+vector_dimension = 1536
+
+[authentication]
+provider = "google"
+jwt_secret = "your-jwt-secret-here-change-in-production"
+token_expiry_hours = 24
+
+[authentication.credentials]
+client_id = "your-oauth2-client-id"
+client_secret = "your-oauth2-client-secret"
+redirect_url = "http://localhost:8080/auth/callback"
+auth_url = "https://accounts.google.com/o/oauth2/v2/auth"
+token_url = "https://oauth2.googleapis.com/token"
+
+[code_dna]
+setting = "Cyberpunk Dystopia"
+technology = "High-tech Low-life"
+physics_laws = [
+    "Neural Network Physics",
+    "Quantum Computing",
+    "Augmentation Limits"
+]
+themes = [
+    "Corporate Control",
+    "Transhumanism",
+    "Digital vs Physical"
+]
+time_scale = 1.2
+entropy_rate = 0.05
+natural_laws = [
+    "Technology corrupts",
+    "Information is power",
+    "Identity is fluid"
+]
+
+# Game Elements Configuration
+[game_elements.player]
+element_type = "character"
+properties = { health = "100", speed = "1.5", strength = "10" }
+
+[game_elements.world]
+element_type = "environment"
+properties = { size = "large", complexity = "high" }
+
+# Workflow Definitions
+[workflows.onboarding]
+name = "Player Onboarding"
+description = "Initial player setup and tutorial"
+enabled = true
+triggers = ["new_player", "tutorial_start"]
+
+[[workflows.onboarding.steps]]
+id = "welcome"
+action = "show_welcome_message"
+next = "character_creation"
+
+[[workflows.onboarding.steps]]
+id = "character_creation"
+action = "create_character"
+next = "tutorial"
+
+[[workflows.onboarding.steps]]
+id = "tutorial"
+action = "start_tutorial"
+
+[workflows.quest_completion]
+name = "Quest Completion Handler"
+description = "Handle quest completion and rewards"
+enabled = true
+triggers = ["quest_complete"]
+
+[[workflows.quest_completion.steps]]
+id = "validate"
+action = "validate_quest_completion"
+next = "reward"
+
+[[workflows.quest_completion.steps]]
+id = "reward"
+action = "grant_rewards"
+
+[[workflows.quest_completion.steps.conditions]]
+field = "quest_status"
+operator = "eq"
+value = "completed"

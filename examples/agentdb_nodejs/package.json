@@ -1,0 +1,23 @@
+{
+  "name": "arcadia-agentdb-nodejs-example",
+  "version": "1.0.0",
+  "description": "Node.js example for ARCADIA AgentDB integration",
+  "main": "example.js",
+  "scripts": {
+    "start": "node example.js",
+    "build": "cd ../.. && wasm-pack build --target nodejs --out-dir examples/agentdb_nodejs/pkg-node",
+    "prebuild": "cd ../.. && cargo build --release"
+  },
+  "keywords": [
+    "arcadia",
+    "agentdb",
+    "ai",
+    "reinforcement-learning",
+    "wasm"
+  ],
+  "author": "Reuven Cohen <ruv@ruvnet.com>",
+  "license": "MIT OR Apache-2.0",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

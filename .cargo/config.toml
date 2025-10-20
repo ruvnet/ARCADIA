@@ -1,0 +1,23 @@
+# Cargo configuration for WASM builds
+
+[build]
+# Default target for WASM builds
+# target = "wasm32-unknown-unknown"
+
+[target.wasm32-unknown-unknown]
+# WASM-specific build configuration
+rustflags = [
+    "-C", "link-arg=-s",
+    "-C", "opt-level=z",
+    "-C", "lto=fat",
+]
+
+# Profile optimizations for WASM
+[profile.release]
+opt-level = "z"     # Optimize for size
+lto = true          # Enable Link Time Optimization
+codegen-units = 1   # Better optimization, slower compile
+panic = "abort"     # Smaller binary size
+
+[profile.dev.package."*"]
+opt-level = 2       # Optimize dependencies even in dev mode
