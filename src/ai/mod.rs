@@ -14,6 +14,7 @@ pub mod evolutionary;
 pub mod self_awareness;
 pub mod emotion;
 pub mod symbolic;
+pub mod goap;
 
 // Re-export main types for convenience
 pub use neo_cortex::{
@@ -71,6 +72,16 @@ pub use symbolic::{
     QueryResult,
 };
 
+pub use goap::{
+    GoapPlanner,
+    GoapAction,
+    GoapGoal,
+    GoapPlan,
+    WorldState,
+    StateValue,
+    PlanningStats,
+};
+
 use uuid::Uuid;
 use std::sync::Arc;
 use parking_lot::RwLock;
@@ -94,6 +105,9 @@ pub struct IntegratedAISystem {
 
     /// Symbolic computing system
     pub symbolic: Arc<SymbolicComputing>,
+
+    /// GOAP planner for goal-oriented action planning
+    pub goap: Arc<GoapPlanner>,
 }
 
 impl IntegratedAISystem {
@@ -114,6 +128,7 @@ impl IntegratedAISystem {
             self_awareness: Arc::new(RwLock::new(SelfAwareness::new(entity_id, entity_name))),
             emotion: Arc::new(EmotionAdaptiveExperiences::new()),
             symbolic: Arc::new(SymbolicComputing::new()),
+            goap: Arc::new(GoapPlanner::new().with_max_iterations(1000)),
         }
     }
 
